@@ -59,11 +59,11 @@ app.listen(app.get('port'), function () {
       let plus1 = 1.01; // +1 %
       //rumus Math.floor((ask_price * percentage) / price_precision) * price_precision
       let wantBuy = 10000;
-      // let wantBuyOnPrice = Math.floor((last * min1) / price_precision) * price_precision;
-      let wantBuyOnPrice = parseInt(last) - price_precision;
+      let wantBuyOnPrice = Math.floor((last * min1) / price_precision) * price_precision;
+      // let wantBuyOnPrice = parseInt(last) - price_precision;
       // let wantSell = wantBuy * 2;
-      // let wantSellOnPrice = Math.floor((last * plus1) / price_precision) * price_precision;
-      let wantSellOnPrice = parseInt(last) + price_precision;
+      let wantSellOnPrice = Math.floor((last * plus1) / price_precision) * price_precision;
+      // let wantSellOnPrice = parseInt(last) + price_precision;
       let coinGetBuy = (wantBuy / wantBuyOnPrice).toFixed(8);
       let coinGetSell = (coinGetBuy * wantSellOnPrice).toFixed(0);
       console.log('----------------------------------')
