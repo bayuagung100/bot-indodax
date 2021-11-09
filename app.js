@@ -103,6 +103,11 @@ app.listen(app.get('port'), function () {
             setTimeout(() => {
               intervalRate = setInterval(myFn, 6000);
             }, 2000);
+          } else if (myOrderGet.status === 'cancelled') {
+            clearInterval(intervalGetOrder);
+            setTimeout(() => {
+              intervalRate = setInterval(myFn, 6000);
+            }, 2000);
           }
         }, 6000);
       } else {
@@ -118,6 +123,11 @@ app.listen(app.get('port'), function () {
             console.log(`do it sell`);
             let doSell = await trade(coin, 'sell', wantSellOnPrice, '', coinGetBuy)
             console.log('doSell', doSell)
+            setTimeout(() => {
+              intervalRate = setInterval(myFn, 6000);
+            }, 2000);
+          } else if (myOrderGet.status === 'cancelled') {
+            clearInterval(intervalGetOrder);
             setTimeout(() => {
               intervalRate = setInterval(myFn, 6000);
             }, 2000);
