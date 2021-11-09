@@ -1,7 +1,7 @@
 var axios = require('axios');
 var qs = require('qs');
 const { signHmacSha512, secretKey, key, urlPrivate } = require('./config');
-module.exports.trade = async function (coin, type, price, idr, coin) {
+module.exports.trade = async function (coin, type, price, idr, coinAmount) {
     var data = qs.stringify({
         'method': 'trade',
         'timestamp': '1578304294000',
@@ -10,7 +10,7 @@ module.exports.trade = async function (coin, type, price, idr, coin) {
         'type': type,
         'price': price,
         'idr': idr,
-        'btc': coin
+        'btc': coinAmount
     });
     var config = {
         method: 'post',
