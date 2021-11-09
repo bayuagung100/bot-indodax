@@ -101,15 +101,15 @@ app.listen(app.get('port'), function () {
             let doSell = await trade(coin, 'sell', wantSellOnPrice, '', coinGetBuy)
             console.log('doSell', doSell)
             setTimeout(() => {
-              intervalRate = setInterval(myFn, 6000);
+              intervalRate = setInterval(myFn, 10000);
             }, 2000);
           } else if (myOrderGet.status === 'cancelled') {
             clearInterval(intervalGetOrder);
             setTimeout(() => {
-              intervalRate = setInterval(myFn, 6000);
+              intervalRate = setInterval(myFn, 10000);
             }, 2000);
           }
-        }, 6000);
+        }, 10000);
       } else {
         clearInterval(intervalRate);
         let intervalGetOrder = setInterval(async () => {
@@ -124,15 +124,15 @@ app.listen(app.get('port'), function () {
             let doSell = await trade(coin, 'sell', wantSellOnPrice, '', coinGetBuy)
             console.log('doSell', doSell)
             setTimeout(() => {
-              intervalRate = setInterval(myFn, 6000);
+              intervalRate = setInterval(myFn, 10000);
             }, 2000);
           } else if (myOrderGet.status === 'cancelled') {
             clearInterval(intervalGetOrder);
             setTimeout(() => {
-              intervalRate = setInterval(myFn, 6000);
+              intervalRate = setInterval(myFn, 10000);
             }, 2000);
           }
-        }, 6000);
+        }, 10000);
       }
 
       console.log('----------------------------------')
@@ -167,7 +167,7 @@ app.listen(app.get('port'), function () {
       }
     }
 
-    var intervalRate = setInterval(myFn, 6000);
+    var intervalRate = setInterval(myFn, 10000);
 
   }, 2000);
 });
